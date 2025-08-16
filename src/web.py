@@ -32,6 +32,7 @@ class MyServer(BaseHTTPRequestHandler):
             self.end_headers()  # Завершение формирования заголовков ответа
             self.wfile.write(encoded_content)  # Тело ответа
 
+        """ Обработка исключений """
         except FileNotFoundError:
             self.send_error(404, "File not found")
         except Exception as e:
